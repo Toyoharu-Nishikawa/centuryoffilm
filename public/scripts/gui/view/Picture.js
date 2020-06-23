@@ -59,8 +59,9 @@ export const NormalPicture = class {
     }
     else{
       if(this.show){
-        this.pixiObj.removeChild()
-        this.app.stage.removeChild(this.pixiObj)
+//        this.pixiObj.removeChild()
+//        this.app.stage.removeChild(this.pixiObj)
+        this.pixiObj.alpha = 0
         this.show = false
       }
       else{
@@ -68,7 +69,8 @@ export const NormalPicture = class {
         if(this.wait<0){
             this.count = this.showTime
             this.wait=this.hideTime
-            this.app.stage.addChild(this.pixiObj)
+            this.pixiObj.alpha = 1.0
+            //this.app.stage.addChild(this.pixiObj)
             this.show=true
         }
       }
